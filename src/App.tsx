@@ -1,4 +1,5 @@
 import "./App.css";
+import { Stoplight } from "./components/stoplight";
 
 function App() {
   return (
@@ -52,6 +53,8 @@ function App() {
         <polygon points="487.9,280 512.1,280 515.1,365 484.9,365" fill="url(#center)" />
         <polygon points="482.5,430 517.5,430 520,500 480,500" fill="url(#center)" />
       </svg>
+
+      <Stoplight className="signal" />
     </main>
   );
 }

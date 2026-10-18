@@ -108,6 +108,22 @@
   display: block;
 }
 
+.signal {
+  position: absolute;
+  z-index: 2;
+  left: max(1.25rem, 7%);
+  bottom: 5%;
+}
+
+@media (max-width: 640px) {
+  .signal {
+    left: 0.75rem;
+    bottom: 3%;
+    transform: scale(0.64);
+    transform-origin: bottom left;
+  }
+}
+
 @keyframes drift {
   from {
     transform: translateX(0);

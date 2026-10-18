@@ -1,0 +1,75 @@
+.stoplight {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 84px;
+}
+
+.stoplight-housing {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 13px 16px;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 18%),
+    linear-gradient(90deg, #4a525d 0%, #2a3038 18%, #171b21 55%, #2c333c 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -3px 6px rgba(0, 0, 0, 0.45),
+    0 14px 24px rgba(18, 28, 16, 0.28);
+}
+
+.stoplight-well {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 58px;
+  border-radius: 12px;
+  background: radial-gradient(circle at 50% 42%, #323844, #0c0e12 72%);
+  box-shadow:
+    inset 0 2px 5px rgba(0, 0, 0, 0.72),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.stoplight-lens {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 36% 32%, rgba(255, 255, 255, 0.55), transparent 26%), var(--lens);
+  box-shadow: inset 0 -5px 8px rgba(0, 0, 0, 0.35);
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.stoplight-well[data-active] .stoplight-lens {
+  box-shadow:
+    inset 0 -6px 8px rgba(0, 0, 0, 0.18),
+    0 0 10px var(--lens),
+    0 0 26px var(--lens);
+}
+
+.stoplight-pole {
+  width: 14px;
+  height: 108px;
+  background: linear-gradient(90deg, #6a7380 0%, #3a424c 28%, #1c2128 62%, #4e5763 100%);
+  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.2);
+}
+
+.stoplight-base {
+  width: 48px;
+  height: 8px;
+  border-radius: 4px 4px 2px 2px;
+  background: linear-gradient(180deg, #3d4550, #1a1e24);
+  box-shadow: 0 8px 10px rgba(20, 32, 16, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stoplight-lens {
+    transition: none;
+  }
+}
