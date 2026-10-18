@@ -1,101 +1,58 @@
-import { useState } from "react";
-import heroImg from "./assets/hero.png";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "./assets/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <main className="scene">
+      <div className="sky" aria-hidden="true">
+        <div className="cloud cloud-1">
+          <span />
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
-          </p>
+        <div className="cloud cloud-2">
+          <span />
         </div>
-        <button type="button" className="counter" onClick={() => setCount((count) => count + 1)}>
-          Count is {count}
-        </button>
-      </section>
+        <div className="cloud cloud-3">
+          <span />
+        </div>
+      </div>
 
-      <div className="ticks"></div>
+      <div className="ground" aria-hidden="true" />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg className="button-icon" role="presentation" aria-hidden="true">
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+      <svg
+        className="road"
+        viewBox="0 0 1000 500"
+        preserveAspectRatio="none"
+        role="img"
+        aria-label="A road stretching to the horizon"
+      >
+        <defs>
+          <linearGradient id="asphalt" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#c5d0da" />
+            <stop offset="14%" stopColor="#7d8794" />
+            <stop offset="100%" stopColor="#3a4048" />
+          </linearGradient>
+          <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#ffffff" stopOpacity="0.25" />
+            <stop offset="22%" stopColor="#ffffff" stopOpacity="0.9" />
+            <stop offset="100%" stopColor="#f4f4f4" />
+          </linearGradient>
+          <linearGradient id="center" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#ffe56a" stopOpacity="0.2" />
+            <stop offset="20%" stopColor="#f5d34a" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="#e2b423" />
+          </linearGradient>
+        </defs>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+        <polygon points="100,500 490,0 510,0 900,500" fill="url(#asphalt)" />
+        <polygon points="490,0 492,0 118,500 100,500" fill="url(#edge)" />
+        <polygon points="508,0 510,0 900,500 882,500" fill="url(#edge)" />
+
+        <polygon points="497.1,24 502.9,24 503.7,48 496.3,48" fill="url(#center)" />
+        <polygon points="495.1,80 504.9,80 506.3,120 493.7,120" fill="url(#center)" />
+        <polygon points="492.1,165 507.9,165 510.1,225 489.9,225" fill="url(#center)" />
+        <polygon points="487.9,280 512.1,280 515.1,365 484.9,365" fill="url(#center)" />
+        <polygon points="482.5,430 517.5,430 520,500 480,500" fill="url(#center)" />
+      </svg>
+    </main>
   );
 }
 
